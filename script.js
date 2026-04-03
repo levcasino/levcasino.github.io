@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ТВОЙ АКТУАЛЬНЫЙ СПИСОК ИГР
     const games = [
         { id: 1, name: "Gates of Olympus", provider: "Pragmatic", image: "image/1752687405755_320Volcanoes3.webp" },
         { id: 2, name: "Sweet Bonanza", provider: "Pragmatic", image: "image/Piggy.webp" },
