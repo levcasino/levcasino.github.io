@@ -47,22 +47,13 @@
     </script>
     <link rel="stylesheet" href="style.css">
     <style>
-    @keyframes simpleFade {
-        from { opacity: 0; transform: translateY(10px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    .game-card-visible {
-        animation: simpleFade 0.5s ease-out forwards !important;
-    }
-    .lucide { display: inline-block; }
-     .game-card {
+.game-card {
     opacity: 1 !important;
-    visibility: visible !important;
+    display: block !important;
 }
-#games-grid {
-    display: grid !important;
-    min-height: 200px;
-}   
+#hero-slider {
+    display: flex !important;
+}
 </style>
 </head>
 <body class="bg-banda-dark text-banda-text antialiased overflow-x-hidden">
