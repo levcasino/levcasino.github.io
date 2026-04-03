@@ -1,4 +1,6 @@
-lucide.createIcons();
+if (typeof lucide !== 'undefined') {
+    lucide.createIcons();
+}
 const banners = [
     {
         id: 1,
