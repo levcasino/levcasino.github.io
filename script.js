@@ -32,22 +32,22 @@ const banners = [
     }
 ];
 const games = [
-    { id: 1, name: "Gates of Olympus", provider: "Pragmatic", category: "slots", image: "http://static.photos/gaming/320x240/1" },
-    { id: 2, name: "Sweet Bonanza", provider: "Pragmatic", category: "slots", image: "http://static.photos/gaming/320x240/2" },
-    { id: 3, name: "Book of Dead", provider: "Play'n GO", category: "slots", image: "http://static.photos/gaming/320x240/3" },
-    { id: 4, name: "Razor Shark", provider: "Push Gaming", category: "slots", image: "http://static.photos/gaming/320x240/4" },
-    { id: 5, name: "Money Train 4", provider: "Relax", category: "new", image: "http://static.photos/gaming/320x240/5" },
-    { id: 6, name: "Roulette Live", provider: "Evolution", category: "live", image: "http://static.photos/gaming/320x240/6" },
-    { id: 7, name: "Blackjack VIP", provider: "Evolution", category: "live", image: "http://static.photos/gaming/320x240/7" },
-    { id: 8, name: "Mega Wheel", provider: "Pragmatic", category: "live", image: "http://static.photos/gaming/320x240/8" },
-    { id: 9, name: "Fruit Party", provider: "Pragmatic", category: "slots", image: "http://static.photos/gaming/320x240/9" },
-    { id: 10, name: "The Dog House", provider: "Pragmatic", category: "slots", image: "http://static.photos/gaming/320x240/10" },
-    { id: 11, name: "Starburst", provider: "NetEnt", category: "slots", image: "http://static.photos/gaming/320x240/11" },
-    { id: 12, name: "Gonzo's Quest", provider: "NetEnt", category: "slots", image: "http://static.photos/gaming/320x240/12" },
-    { id: 13, name: "Wolf Gold", provider: "Pragmatic", category: "slots", image: "http://static.photos/gaming/320x240/13" },
-    { id: 14, name: "Fire Joker", provider: "Play'n GO", category: "slots", image: "http://static.photos/gaming/320x240/14" },
-    { id: 15, name: "Bonanza", provider: "BTG", category: "slots", image: "http://static.photos/gaming/320x240/15" },
-    { id: 16, name: "Legacy of Dead", provider: "Play'n GO", category: "slots", image: "http://static.photos/gaming/320x240/16" }
+    { id: 1, name: "Gates of Olympus", provider: "Pragmatic", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" },
+    { id: 2, name: "Sweet Bonanza", provider: "Pragmatic", category: "slots", image: "image/1753872681526_You20Piggy20On%20It1.webp" },
+    { id: 3, name: "Book of Dead", provider: "Play'n GO", category: "slots", image: "image/1769715461541_Pray20Six.webp" },
+    { id: 4, name: "Razor Shark", provider: "Push Gaming", category: "slots", image: "image/1771863115876_Mummy20Jewels%20100.webp" },
+    { id: 5, name: "Money Train 4", provider: "Relax", category: "new", image: "image/1773220606499_Big20Raceday%20Repeat.webp" },
+    { id: 6, name: "Roulette Live", provider: "Evolution", category: "live", image: "image/1773650626140_Eternal%20Duel.webp" },
+    { id: 7, name: "Blackjack VIP", provider: "Evolution", category: "live", image: "image/Floating+Dragon+Megaways.webp" },
+    { id: 8, name: "Mega Wheel", provider: "Pragmatic", category: "live", image: "image/Princess+Suki.webp" },
+    { id: 9, name: "Fruit Party", provider: "Pragmatic", category: "slots", image: "image/Santa+Mummy.webp" },
+    { id: 10, name: "The Dog House", provider: "Pragmatic", category: "slots", image: "image/Treasures+of+Aztec.webp" },
+    { id: 11, name: "Starburst", provider: "NetEnt", category: "slots", image: "image/Yakuza+Honor.webp" },
+    { id: 12, name: "Gonzo's Quest", provider: "NetEnt", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" },
+    { id: 13, name: "Wolf Gold", provider: "Pragmatic", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" },
+    { id: 14, name: "Fire Joker", provider: "Play'n GO", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" },
+    { id: 15, name: "Bonanza", provider: "BTG", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" },
+    { id: 16, name: "Legacy of Dead", provider: "Play'n GO", category: "slots", image: "image/1752687405755_320Volcanoes3.webp" }
 ];
 let currentSlide = 0;
 const sliderContainer = document.getElementById('hero-slider');
