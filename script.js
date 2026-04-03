@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-
+    // --- ДАННЫЕ ---
     const banners = [
         { id: 1, image: "image/1775227610378_GRAND%20EASTER%20HEIST%20Tournament%20%281%29.png", title: "500 000 €", subtitle: "Пасхальный турнир!" },
         { id: 2, image: "image/1763640463036_Fortune_Bags_Site_Promo_%28Banda%29.png", title: "Испытай Удачу", subtitle: "вместе с Fortune Bags!" },
@@ -23,69 +23,97 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 12, name: "Gonzo's Quest", provider: "NetEnt", image: "image/1752687405755_320Volcanoes3.webp" }
     ];
 
-    // --- Слайдер ---
+    // --- ФУНКЦИЯ БЕЗОПАСНЫХ ИКОНОК ---
+    function safeLucide() {
+        try {
+            if (window.lucide) {
+                window.lucide.createIcons();
+            }
+        } catch (e) {
+            console.warn("Lucide skip: какая-то иконка не найдена, но это не страшно.");
+        }
+    }
+
+    // --- СЛАЙДЕР ---
     let currentSlide = 0;
     const slider = document.getElementById('hero-slider');
-    const dots = document.getElementById('slider-indicators');
+    const dotsContainer = document.getElementById('slider-indicators');
 
-    if (slider && dots) {
+    function initSlider() {
+        if (!slider || !dotsContainer) return;
+        slider.innerHTML = '';
+        dotsContainer.innerHTML = '';
+
         banners.forEach((b, i) => {
             const s = document.createElement('div');
             s.className = 'min-w-full h-full relative';
-            s.innerHTML = `<img src="${b.image}" class="w-full h-full object-cover">
+            s.innerHTML = `
+                <img src="${b.image}" class="w-full h-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-banda-dark to-transparent opacity-80"></div>
-                <div class="absolute bottom-12 left-12"><h2 class="text-4xl font-bold">${b.title}</h2><p>${b.subtitle}</p></div>`;
+                <div class="absolute bottom-8 left-8 md:bottom-12 md:left-12">
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-2">${b.title}</h2>
+                    <p class="text-gray-200">${b.subtitle}</p>
+                </div>`;
             slider.appendChild(s);
-            const d = document.createElement('button');
-            d.className = `w-2 h-2 rounded-full ${i===0?'bg-banda-primary w-6':'bg-white/50'}`;
-            d.onclick = () => { currentSlide = i; update(); };
-            dots.appendChild(d);
+
+            const dot = document.createElement('button');
+            dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-banda-primary w-6' : 'bg-white/50'}`;
+            dotsContainer.appendChild(dot);
         });
     }
 
-    function update() {
-        if (!slider) return;
+    function updateSlider() {
+        if (!slider || !dotsContainer) return;
         slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        Array.from(dots.children).forEach((d, i) => d.className = i===currentSlide ? 'w-6 h-2 rounded-full bg-banda-primary' : 'w-2 h-2 rounded-full bg-white/50');
+        Array.from(dotsContainer.children).forEach((d, i) => {
+            d.className = i === currentSlide ? 'w-6 h-2 rounded-full bg-banda-primary transition-all' : 'w-2 h-2 rounded-full bg-white/50 transition-all';
+        });
     }
-    setInterval(() => { currentSlide = (currentSlide + 1) % banners.length; update(); }, 5000);
 
-    // --- ИГРЫ (Максимально надежный метод) ---
+    // --- ОТРИСОВКА ИГР ---
     function renderGames() {
         const grid = document.getElementById('games-grid');
         if (!grid) return;
-        
         grid.innerHTML = '';
+
         games.forEach(game => {
             const card = document.createElement('div');
-            card.className = 'game-card group bg-banda-card rounded-xl overflow-hidden border border-white/5';
+            card.className = 'game-card group bg-banda-card rounded-xl overflow-hidden border border-white/5 transition-all hover:border-banda-primary/50';
             card.innerHTML = `
                 <div class="aspect-[4/3] relative overflow-hidden">
                     <img src="${game.image}" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x300/232732/FFB800?text=${game.name}'">
-                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-all">
+                    <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex flex-col items-center justify-center transition-opacity duration-300 backdrop-blur-sm">
                         <div class="w-12 h-12 rounded-full bg-banda-primary text-black flex items-center justify-center mb-2">
-                             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="m7 3 14 9-14 9z"/></svg>
+                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="m7 3 14 9-14 9z"/></svg>
                         </div>
                         <span class="text-xs font-bold text-white uppercase">Играть</span>
                     </div>
                 </div>
-                <div class="p-3"><h3 class="text-sm truncate font-medium">${game.name}</h3></div>
-            `;
+                <div class="p-3"><h3 class="text-sm truncate font-medium text-gray-200">${game.name}</h3></div>`;
             grid.appendChild(card);
         });
-
-        // Запускаем Lucide отдельно, чтобы ошибка в нем не ломала отрисовку игр
-        try {
-            if (window.lucide) window.lucide.createIcons();
-        } catch (e) {
-            console.warn("Lucide Error, но игры отрисованы!");
-        }
+        safeLucide();
     }
 
+    // --- ЗАПУСК ---
+    initSlider();
     renderGames();
 
+    // Авто-слайдер
+    setInterval(() => {
+        currentSlide = (currentSlide + 1) % banners.length;
+        updateSlider();
+    }, 5000);
+
     // Мобильное меню
-    const btn = document.getElementById('mobile-menu-btn');
+    const menuBtn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
-    btn?.onclick = () => menu?.classList.toggle('translate-x-full') || menu?.classList.toggle('translate-x-0');
+    const closeBtn = document.getElementById('close-mobile-menu');
+
+    [menuBtn, closeBtn].forEach(b => {
+        b?.addEventListener('click', () => {
+            menu?.classList.toggle('translate-x-full');
+            menu?.classList.toggle('translate-x-0');
+        });
+    });
 });
