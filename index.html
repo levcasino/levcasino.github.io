@@ -46,6 +46,16 @@
         }
     </script>
     <link rel="stylesheet" href="style.css">
+    <style>
+    @keyframes simpleFade {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .game-card-visible {
+        animation: simpleFade 0.5s ease-out forwards !important;
+    }
+    .lucide { display: inline-block; }
+</style>
 </head>
 <body class="bg-banda-dark text-banda-text antialiased overflow-x-hidden">
     <header class="fixed top-0 left-0 right-0 z-50 bg-banda-dark/95 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="header">
