@@ -57,62 +57,35 @@
 </style>
 </head>
 <body class="bg-banda-dark text-banda-text antialiased overflow-x-hidden">
-    <header class="fixed top-0 left-0 right-0 z-50 bg-banda-dark/95 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="header">
-        <div class="container mx-auto px-4 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 group">
-                <img src="image/babda.png" alt="Banda Casino Logo" class="w-10 h-10 rounded-lg object-cover transform group-hover:rotate-6 transition-transform">
-                <span class="text-2xl font-bold tracking-tight hidden sm:block">BANDA</span>
-            </a>
-            <nav class="hidden lg:flex items-center gap-8">
-                <a href="#games" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
-                    Игры
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
-                </a>
-                <a href="#bonuses" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
-                    Бонусы
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
-                </a>
-                <a href="#tournaments" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">
-                    Турниры
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-banda-primary transition-all group-hover:w-full"></span>
-                </a>
-                <a href="#vip" class="text-sm font-medium text-banda-primary hover:text-banda-primaryHover transition-colors flex items-center gap-1">
-                    <i data-lucide="crown" class="w-4 h-4"></i>
-                    VIP
-                </a>
-            </nav>
-            <div class="hidden lg:flex items-center gap-4">
-                <button class="px-5 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">
-                    Вход
-                </button>
-                <button class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all transform hover:-translate-y-0.5">
-                    Регистрация
-                </button>
-            </div>
-            <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
-                <i data-lucide="menu" class="w-6 h-6"></i>
+<header class="fixed top-0 left-0 right-0 z-50 bg-banda-dark/95 backdrop-blur-md border-b border-white/5 transition-all duration-300" id="header">
+    <div class="container mx-auto px-4 h-20 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-2 group">
+            <img src="image/babda.png" alt="Banda Casino Logo" class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg object-cover transform group-hover:rotate-6 transition-transform">
+            <span class="text-xl sm:text-2xl font-bold tracking-tight hidden xs:block">BANDA</span>
+        </a>
+        <div class="flex lg:hidden items-center gap-2 ml-auto mr-2">
+            <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-[12px]">
+                Вход
+            </button>
+            <button class="px-3 py-1.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-[12px] shadow-lg shadow-orange-500/20">
+                Рег.
             </button>
         </div>
-        <div id="mobile-menu" class="fixed inset-0 bg-banda-darker z-40 transform translate-x-full transition-transform duration-300 lg:hidden flex flex-col pt-24 px-6">
-            <button id="close-mobile-menu" class="absolute top-6 right-6 text-white p-2">
-                <i data-lucide="x" class="w-8 h-8"></i>
-            </button>
-            <div class="flex gap-3 mb-8">
-                <button class="flex-1 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">Вход</button>
-                <button class="flex-1 py-2.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-sm hover:shadow-lg hover:shadow-orange-500/20 transition-all">Регистрация</button>
-            </div>
-            <nav class="flex flex-col gap-6 text-xl font-medium">
-                <a href="#games" class="mobile-link">Игры</a>
-                <a href="#bonuses" class="mobile-link">Бонусы</a>
-                <a href="#tournaments" class="mobile-link">Турниры</a>
-                <a href="#vip" class="mobile-link text-banda-primary">VIP Клуб</a>
-            </nav>
-            <div class="mt-auto mb-8 flex flex-col gap-4">
-                <button class="w-full py-4 rounded-xl border border-white/10 text-center font-medium">Вход</button>
-                <button class="w-full py-4 rounded-xl bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold">Регистрация</button>
-            </div>
+        <nav class="hidden lg:flex items-center gap-8">
+            <a href="#games" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">Игры</a>
+            <a href="#bonuses" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">Бонусы</a>
+            <a href="#tournaments" class="text-sm font-medium hover:text-banda-primary transition-colors relative group">Турниры</a>
+            <a href="#vip" class="text-sm font-medium text-banda-primary flex items-center gap-1"><i data-lucide="crown" class="w-4 h-4"></i>VIP</a>
+        </nav>
+        <div class="hidden lg:flex items-center gap-4">
+            <button class="px-5 py-2.5 rounded-lg border border-white/10 hover:bg-white/5 transition-all font-medium text-sm">Вход</button>
+            <button class="px-5 py-2.5 rounded-lg bg-gradient-to-r from-banda-primary to-orange-600 text-banda-darker font-bold text-sm hover:shadow-lg transition-all">Регистрация</button>
         </div>
-    </header>
+        <button id="mobile-menu-btn" class="lg:hidden text-white p-2">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+    </div>
+</header>
     <main class="pt-20">
         <section class="relative max-w-[1600px] mx-auto px-4 py-6 lg:py-10">
             <div class="relative rounded-2xl overflow-hidden aspect-[16/7] md:aspect-[21/9] shadow-2xl shadow-black/50 border border-white/5 group">
