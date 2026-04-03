@@ -123,7 +123,7 @@ function renderGames(limit) {
     gamesToShow.forEach((game, index) => {
         const card = document.createElement('div');
         card.className = 'game-card group relative rounded-xl overflow-hidden bg-banda-card cursor-pointer border border-white/5';
-        card.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`;
+        card.style.animation = `fadeIn 0.5s ease-out ${index * 0.05}s forwards`; 
         card.style.opacity = '0'; 
 
         card.innerHTML = `
