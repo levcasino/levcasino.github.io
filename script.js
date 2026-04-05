@@ -1,26 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- ДАННЫЕ ---
     const banners = [
-        { id: 1, image: "image/1775227610378_GRAND%20EASTER%20HEIST%20Tournament%20%281%29.png", title: "500 000 €", subtitle: "Пасхальный турнир!" },
-        { id: 2, image: "image/1763640463036_Fortune_Bags_Site_Promo_%28Banda%29.png", title: "Испытай Удачу", subtitle: "вместе с Fortune Bags!" },
-        { id: 3, image: "image/1758107613594_New_games.png", title: "Свежак на районе!", subtitle: "Новые игры уже здесь!" },
-        { id: 4, image: "image/1728721451245_Welcome.png", title: "750 ФС", subtitle: "Приветственный БОНУС!" },
+        { id: 1, image: "/image/1775227610378_GRAND%20EASTER%20HEIST%20Tournament%20%281%29.png", title: "500 000 €", subtitle: "Пасхальный турнир!" },
+        { id: 2, image: "/image/1763640463036_Fortune_Bags_Site_Promo_%28Banda%29.png", title: "Испытай Удачу", subtitle: "вместе с Fortune Bags!" },
+        { id: 3, image: "/image/1758107613594_New_games.png", title: "Свежак на районе!", subtitle: "Новые игры уже здесь!" },
+        { id: 4, image: "/image/1728721451245_Welcome.png", title: "750 ФС", subtitle: "Приветственный БОНУС!" },
         { id: 5, image: "https://banda-prod-backend-client-bucket.s3.eu-central-1.amazonaws.com/banners/1728731135783_Wheel.png", title: "Колесо Фортуны", subtitle: "Крути каждый день!" }
     ];
 
     const games = [
-        { id: 1, name: "Gates of Olympus", provider: "Pragmatic", image: "image/1752687405755_320Volcanoes3.webp" },
-        { id: 2, name: "Sweet Bonanza", provider: "Pragmatic", image: "image/Piggy.webp" },
-        { id: 3, name: "Book of Dead", provider: "Play'n GO", image: "image/1769715461541_Pray20Six.webp" },
-        { id: 4, name: "Razor Shark", provider: "Push Gaming", image: "image/Mummy.webp" },
-        { id: 5, name: "Money Train 4", provider: "Relax", image: "image/Raceday.webp" },
-        { id: 6, name: "Roulette Live", provider: "Evolution", image: "image/Eternal.webp" },
-        { id: 7, name: "Blackjack VIP", provider: "Evolution", image: "image/Floating+Dragon+Megaways.webp" },
-        { id: 8, name: "Mega Wheel", provider: "Pragmatic", image: "image/Princess+Suki.webp" },
-        { id: 9, name: "Fruit Party", provider: "Pragmatic", image: "image/Santa+Mummy.webp" },
-        { id: 10, name: "The Dog House", provider: "Pragmatic", image: "image/Treasures+of+Aztec.webp" },
-        { id: 11, name: "Starburst", provider: "NetEnt", image: "image/Yakuza+Honor.webp" },
-        { id: 12, name: "Gonzo's Quest", provider: "NetEnt", image: "image/1752687405755_320Volcanoes3.webp" }
+        { id: 1, name: "Gates of Olympus", provider: "Pragmatic", image: "/image/1752687405755_320Volcanoes3.webp" },
+        { id: 2, name: "Sweet Bonanza", provider: "Pragmatic", image: "/image/Piggy.webp" },
+        { id: 3, name: "Book of Dead", provider: "Play'n GO", image: "/image/1769715461541_Pray20Six.webp" },
+        { id: 4, name: "Razor Shark", provider: "Push Gaming", image: "/image/Mummy.webp" },
+        { id: 5, name: "Money Train 4", provider: "Relax", image: "/image/Raceday.webp" },
+        { id: 6, name: "Roulette Live", provider: "Evolution", image: "/image/Eternal.webp" },
+        { id: 7, name: "Blackjack VIP", provider: "Evolution", image: "/image/Floating+Dragon+Megaways.webp" },
+        { id: 8, name: "Mega Wheel", provider: "Pragmatic", image: "/image/Princess+Suki.webp" },
+        { id: 9, name: "Fruit Party", provider: "Pragmatic", image: "/image/Santa+Mummy.webp" },
+        { id: 10, name: "The Dog House", provider: "Pragmatic", image: "/image/Treasures+of+Aztec.webp" },
+        { id: 11, name: "Starburst", provider: "NetEnt", image: "/image/Yakuza+Honor.webp" },
+        { id: 12, name: "Gonzo's Quest", provider: "NetEnt", image: "/image/1752687405755_320Volcanoes3.webp" }
     ];
 
     // --- ФУНКЦИЯ БЕЗОПАСНЫХ ИКОНОК ---
